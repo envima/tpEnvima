@@ -1,0 +1,43 @@
+#------------------------------------------------------------------------------
+# Type: main control script
+# Name: <%= basename(getOption("projectRoot")) %>
+# Author: [name], [email@com]
+# Project:
+# Approach:
+# Data:
+# Results:
+# Copyright  GPL (>= 3)
+# URL:
+#------------------------------------------------------------------------------
+
+
+#-----------------------------------------------------------------------
+# PROJECT
+#-----------------------------------------------------------------------
+#
+#--- NOTE
+#
+# This is the main control script of the project. It should contain all the information
+# necessary to understand the goal of the project and the different steps of
+# your analysis.
+#
+# It should not contain data manipulation code or long technical blocks of code
+# because they tend to hide your statistical reasoning.
+# - data code should go in script 'data'.
+# - technical code should be written as functions and should go in scripts
+#   contained in a subfolder "tools" (use prScript("tools/function_name")) to
+#   create them). Scripts in this folder are automatically sourced at startup.
+#
+# For small projects, statistical analysis of your data should be performed in
+# this file. For larger projects, you should put your analysis code in other
+# scripts and describe here what each script does. You can create a link to them
+# with function 'prScript'.
+
+#- 01
+#--- RUN ANALYSIS
+
+<% if (instructions) { -%>
+
+# Here we go
+
+<% } %>

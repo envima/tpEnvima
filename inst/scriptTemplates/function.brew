@@ -1,0 +1,21 @@
+#------------------------------------------------------------------------------
+# Type: function script
+# FUNCTION <%= gsub("^tools?|\\.R$", "", basename(path)) %>
+# Author: [name], [email@com]
+# Description:
+# ARGS:
+#     x:
+#     y:
+#     z:
+# Returns:
+# Examples:
+# Copyright  GPL (>= 3)
+# URL:
+#------------------------------------------------------------------------------
+
+
+
+
+
+
+

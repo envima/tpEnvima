@@ -1,0 +1,23 @@
+# Load base packages
+library(datasets)
+library(graphics)
+library(grDevices)
+library(methods)
+library(stats)
+library(utils)
+library(devtools)
+
+options(prDefaultRepos="<%= getOption("repos") %>")
+
+if (!require(tpEnvima)) {
+  f <- tempfile()
+  cat("", file = f)
+  Sys.setenv(R_PROFILE_USER = f)
+  devtools::install_github(repo = "envima/tpEnvima", ref = "master")
+  Sys.unsetenv("R_PROFILE_USER")
+  file.remove(f)
+  library(tpEnvima)
+}
+
+prStart()
+
