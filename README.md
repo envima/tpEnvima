@@ -3,21 +3,22 @@ Environmental Informatics Lab @ Marburg University
 
 # Motivation to organise R data analysis workflows and projects including the documentation
 
-When working with R on any kind of more complex projects as algorithm development, applied data analysis or data processing chains, data-, script- and output files  are increasing in number very quickly. This is even more the case when working with remote sensing or gis data via the command line. The purpose of this package is to structurally encourage the user to organize his work in a standardized way and to use established (best practice) workflows to improve transparency, maintainability and reproducibility of R-projects. The central goal is to support collaboration and reproducibility within projects and publications. This package is designed to be used with the Rstudio project template system.
+When working with R on any kind of more complex projects as algorithm development, applied data analysis or data processing chains, data-, script- and output files  are increasing in number very quickly. This is even more the case when working with remote sensing or GI data via the command line. The purpose of this package is to structurally encourage the user to organize his work in a standardized way and to use established (best practice) workflows to improve transparency, maintainability and reproducibility of R-projects. The central goal is to support collaboration and reproducibility within projects and publications based on a version control system as github. This package is designed to be used with the Rstudio project template system.
 
-## Introduction and Goal
+
+
+## Background 
 The `tinyProject` package is a great base due to it's lean and flat organised data analysis workflow  while the former `envimaR` package provides deeper and more specific project structures, more complex working environments and a simpler handling of more diverse e.g. remote sensing and spatial data sets. Basically, the advanced merge of both called `tpEnvima.
 
 The essential goal of `tpEnvima`  is the support of a fully replicable project structure and workflow, i.e. from data acquisition and pre-processing to analysis and the finished manuscript, a functional package with `tpEnvima` will provide the necessary support and best practice examples.
 
 The core unit is provided by the the slightly modified `tinyProject` package by Francois Guillem (guillem.francois@gmail.com) which is slightly modified and completely integrated.  
 
-#  Introduction
-A typical GI research project uses one or several data sources and a bunch of scripts to answer questions about some subject and to generate material that will help the dicussion and spread of the results of the project. The purpose of this package is to improve standards and reproducibility by supporting the user to adopt some simple conventions.
+
 
 ## Initial Project Setup
 
-All (research)  project should be managed by a version control software and in our case by Git. 
+
 
 So follow this instruction in the beginning of *each new project*:
 
