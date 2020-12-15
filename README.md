@@ -1,22 +1,52 @@
 <img src="https://avatars0.githubusercontent.com/u/44788932?s=200&v=4" align="right" title="Logo">
 Environmental Informatics Lab @ Marburg University
 
-# Organise  R data analysis workflows and projects
+# Motivation to organise R data analysis workflows and projects including the documentation
 
-When working with R on any kind of more complex projects as algorithm development, applied data analysis or data processing chains, data-, script- and output files  are increasing in number very quickly. This is even more the case when working with remote sensing or gis data via the command line. The purpose of this package is to structurally encourage the user to organize his work in a standardized way and to use established best practice workflows to improve transparency, maintainability and reproducibility of R-projects. The central goal is to support collaboration and reproducibility within projects. This package can also be used with the Rstudio project system.
+When working with R on any kind of more complex projects as algorithm development, applied data analysis or data processing chains, data-, script- and output files  are increasing in number very quickly. This is even more the case when working with remote sensing or gis data via the command line. The purpose of this package is to structurally encourage the user to organize his work in a standardized way and to use established (best practice) workflows to improve transparency, maintainability and reproducibility of R-projects. The central goal is to support collaboration and reproducibility within projects and publications. This package is designed to be used with the Rstudio project template system.
 
-## Background
-Basically, the `tpEnvima` package is intended to evaluate a straightforward workflow and project functionality and what is the best praxis of integration. The `tinyProject`is a great base due to it's  lean and flat organised data analysis workflow  while the former `envimaR` package provides deeper and more specific project structures, more complex working environments and a simpler handling of more diverse data sets. 
+## Introduction and Goal
+The `tinyProject` package is a great base due to it's lean and flat organised data analysis workflow  while the former `envimaR` package provides deeper and more specific project structures, more complex working environments and a simpler handling of more diverse e.g. remote sensing and spatial data sets. Basically, the advanced merge of both called `tpEnvima.
 
-Is a merge of the `envimaR` package and other Helpers for setting up working environments and data flows which focus on using the same initialization parameters and the same basic workflows across different computers and team members of the environmental informatics working group at Marburg University. 
+The essential goal of `tpEnvima`  is the support of a fully replicable project structure and workflow, i.e. from data acquisition and pre-processing to analysis and the finished manuscript, a functional package with `tpEnvima` will provide the necessary support and best practice examples.
 
-The core unit is provided by the the slightly modified `tinyProject` package by Francois Guillem (guillem.francois@gmail.com) which is completely integrated.  
+The core unit is provided by the the slightly modified `tinyProject` package by Francois Guillem (guillem.francois@gmail.com) which is slightly modified and completely integrated.  
 
-##  Introduction
-A data analysis project uses one or several data sources and a bunch of scripts to answer questions about some subject and to generate material that will help the diffusion of the results of the project. Ths quality of the answers is not the only critorion of quality of a project: it should also be easy to read and the results should be easy to reproduce. The purpose of this package is to improve these two aspects by encouraging the user to adopt some simple conventions: every project has the same structure, the scripts always do the same type of operations and are heavily commented, the data is always in the same folder and is also documented, etc.
+#  Introduction
+A typical GI research project uses one or several data sources and a bunch of scripts to answer questions about some subject and to generate material that will help the dicussion and spread of the results of the project. The purpose of this package is to improve standards and reproducibility by supporting the user to adopt some simple conventions.
 
 ## Initial Project Setup
-First create an empty project using the Rstudio template or the  function `prScript`. Both possibilities will setup a project root directory and a bisic file tree. `prInit` generates by default five directories: `data` for storing data files, `scripts` for storing R scripts, `output` for storing output files, `run` for runtime calculations and files and `docs` for all kind of project related documentation. Additionally, three scripts are created and opened in the script editor: `setup_data.R` for the import and processing of data, `control.R` for the analysis of the data and `setup_project` for all instructions and environment setup that have to be exetuted everytime the project is opened (load libraries, define constants and functions, etc.). When the user opens the project in Rstudio, the script `setup_project.R` is automatically executed, hence it can used  to automatically load important specific functions or constants etc..
+
+All (research)  project should be managed by a version control software and in our case by Git. 
+
+So follow this instruction in the beginning of *each new project*:
+
+- create a new project in RStudio using the templates of `tpEnvima` on your computer
+- create a GitHub/GitLab repository and connect your local project to the remote repository. (for help see [Happy Git With R](http://happygitwithr.com/))
+
+Your naming must follow some rules for everything to work, it must:
+- contain only ASCII letters, numbers, and ‘.’
+- have at least two characters
+- start with a letter (not a number)
+- must not  end with ‘.’
+
+
+## Current Functionality
+
+The upper way may be done also using the `prInit` function. 
+It create by default five directories: 
+- `data` for storing data files, 
+- `scripts` for storing R scripts, 
+- `output` for storing output files, 
+- `run` for runtime calculations and temporary files 
+- `docs` for all kind of project related documentation. 
+
+Additionally, three default scripts are created and opened in the script editor: 
+-`setup_project` for all instructions and environment setup that have to be exetuted everytime the project is opened (load libraries, define constants and functions, etc.),
+- `setup_data.R` for the pre-processing and cleaning of data,
+- `control.R` for the analysis of the data and . 
+
+Everytime when the user opens the project in Rstudio, the script `setup_project.R` is automatically executed, hence it reproduce an reliable starting environment.
 
 ## Script Management
 The user can open and/or create scripts with the function `prScript`. The function needs the name of the script (without the extention ".R") and if needed a subdirectory, then searches in the folder "scripts" for an existing  file and if not existing it will be created.
