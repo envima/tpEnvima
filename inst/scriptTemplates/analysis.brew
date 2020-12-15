@@ -1,10 +1,18 @@
 #------------------------------------------------------------------------------
-# Type: analysis script
-# Name: <%= gsub("\\.R$", "", basename(path)) %>
-# Author: [name], [email@com]
-# Approach:
-# Data:
-# Results:
-# Copyright  GPL (>= 3)
-# URL:
-#-----------------------------------------------------------------------------
+#'@title Analysis Script
+#'@name <%= gsub("^tools?|\\.R$", "", basename(path)) %>
+#'@description
+#'@details
+#'@param
+#'@note
+#'@author
+#'@return
+#'@details
+#'------------------------------------------------------------------------------
+
+<% if (instructions) { -%>
+
+# Here we go
+
+<% } %>
+
