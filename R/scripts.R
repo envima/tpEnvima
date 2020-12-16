@@ -52,7 +52,7 @@ prScript <- function(name, template, subdir = ".", instructions = TRUE) {
   }
 
   template <- match.arg(template[1],
-                        c("analysis", "setup_data", "function", "control", "setup_project"))
+                        c("analysis", "setup_data", "function", "control", "setup_project","setup_courses"))
 
   # If parameter 'name' is missing, interactively choose a script
   if(missing(name)) {

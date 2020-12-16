@@ -1,0 +1,63 @@
+#------------------------------------------------------------------------------
+# Type: mpg course basic setup
+# Name: <%= gsub("\\.R$", "", basename(path)) %>
+# Author: Chris Reudenbach, reudenbach@uni-marburg.de
+# Approach:
+# Copyright  GPL (>= 3)
+# SCRIPT <%= name %>
+#-----------------------------------------------------------------------------
+
+
+<% if (instructions) { %>#
+
+#----
+# install/check from github
+devtools::install_github("envima/tpEnvima")
+devtools::install_github("r-spatial/link2GI")
+
+packagesToLoad = c("lidR", "link2GI", "mapview", "raster", "rgdal", "rlas", "sp",  "sf", "tidyverse","envimaR","tpEnvima")
+
+mvTop<-mapview::mapviewPalette("mapviewTopoColors")
+mvSpec<-mapviewTopoColors<-mapview::mapviewPalette("mapviewSpectralColors")
+
+# get viridris color palette
+pal<-mapview::mapviewPalette("mapviewTopoColors")
+
+# get rootdir
+rootDir = tpEnvima::alternativeEnvi(root_folder = "/home/creu/edu/mpg-envinsys-plygrnd/",
+                                   alt_env_id = "COMPUTERNAME",
+                                   alt_env_value = "PCRZP",
+                                   alt_env_root_folder = "F:/BEN/edu")
+
+
+# Set project specific subfolders
+projectDirList   = c("data/",                # datafolders for all kind of date
+                     "data/auxdata/",        # the following used by scripts however
+                     "data/aerial/",     # you may add whatever you like
+                     "data/aerial/org/",     # you may add whatever you like
+                     "data/lidar/org/",
+                     "data/lidar/",
+                     "data/lidar/level0/",
+                     "data/lidar/level1/",
+                     "data/lidar/level2/",
+                     "data/data_mof",
+                     "run/",                # temporary data storage
+                     "log/",                # logging
+                     "src/",                # scripts
+                     "/doc/")                # documentation markdown etc.
+
+
+# setup of root directory, folder structure and loading libraries
+# returns "envrmt" list which contains the folder structure as short cuts
+envrmt = tpEnvima::createEnvi(root_folder = rootDir,
+                             folders = projectDirList,
+                             path_prefix = "path_",
+                             libs = packagesToLoad,
+                             alt_env_id = "COMPUTERNAME",
+                             alt_env_value = "PCRZP",
+                             alt_env_root_folder = "F:/BEN/edu")
+# set raster temp path
+raster::rasterOptions(tmpdir = envrmt$path_tmp)
+prSave(envrmt,replace=TRUE)
+return(envrmt)
+<% } %>

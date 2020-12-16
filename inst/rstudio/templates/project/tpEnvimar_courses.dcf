@@ -1,0 +1,10 @@
+Binding: prInitCourses
+Title: courses setup using tpEnvima
+OpenFiles: scripts/initialize_project.R, scripts/setup_data.R, scripts/control.R
+
+Parameter: instructions
+Widget: CheckboxInput
+Label: Add instructions
+Default: On
+Position: left
+

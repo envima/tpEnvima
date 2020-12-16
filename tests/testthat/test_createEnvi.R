@@ -1,5 +1,5 @@
 context("Set paths")
-library(envimaR)
+library(tpEnvima)
 
 
 

@@ -23,7 +23,7 @@ prStart <- function(dir = ".", trace = TRUE) {
   oldProjectRoot <- getOption("projectRoot")
   options("projectRoot" = normalizePath(dir))
   ok <- FALSE
-  prLoad(name="proj_env")
+  #prLoad(name="proj_env")
   tryCatch({
     # Source scripts with prefix "tools" or in dir "tools"
     tools <- union(
@@ -43,6 +43,8 @@ prStart <- function(dir = ".", trace = TRUE) {
     if(trace) cat("Sourcing setup_project.R\n")
     source(.getPath("scripts/setup_project.R"))
     ok <- TRUE
+
+
   }, error = function(e) {
     options(projectRoot = oldProjectRoot)
   })
